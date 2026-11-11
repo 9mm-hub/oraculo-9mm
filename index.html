@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oráculo 9mm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500&display=swap">
+<style>
+  /* Layout: uma tela única, amarela, emoldurada por faixas de grega; a profecia no centro como inscrição. */
+  :root {
+    --sun: #F2C230;      /* amarelo-limão */
+    --sea: #1E4A8A;      /* azul-marinho do manto da Hera */
+    --marble: #F6EEDC;   /* creme do mármore */
+    --ink: #142F58;      /* azul profundo para texto */
+    --display: "Cinzel", "Trajan Pro", Georgia, serif;
+    --verse: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --ui: "Inter", system-ui, -apple-system, sans-serif;
+    --key: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%231E4A8A' stroke-width='4' stroke-linecap='square'%3E%3Cpath d='M0 2H40M0 38H40M6 38V10H30V30H16V20H22'/%3E%3C/g%3E%3C/svg%3E");
+    color-scheme: light;
+  }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--sun);
+    color: var(--ink);
+    font-family: var(--ui);
+  }
+  .temple {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    box-sizing: border-box;
+  }
+  .band {
+    height: 40px;
+    background-image: var(--key);
+    background-repeat: repeat-x;
+    background-size: 40px 40px;
+    background-position: center;
+  }
+  .band.bottom { transform: scaleY(-1); }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    text-align: center;
+    padding-block: 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .eyebrow {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--sea);
+    margin: 0;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    color: var(--sea);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .laurel { width: 120px; height: auto; color: var(--sea); }
+  .tablet {
+    background: var(--marble);
+    border: 3px solid var(--sea);
+    outline: 1px solid var(--sea);
+    outline-offset: 6px;
+    max-width: 34rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: clamp(24px, 6vw, 44px) clamp(20px, 6vw, 48px);
+  }
+  .prophecy {
+    font-family: var(--verse);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 5.2vw, 2.1rem);
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+    animation: rise 700ms ease-out both;
+  }
+  @keyframes rise { from { opacity: 0.25; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .again {
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    color: var(--sea);
+    background: transparent;
+    border: 2px solid var(--sea);
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .again:hover { background: var(--sea); color: var(--sun); }
+  .again:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .sign {
+    font-family: var(--display);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: var(--sea);
+    margin: 0;
+  }
+  .sign em { font-family: var(--verse); font-size: 1.05rem; letter-spacing: 0; display: block; margin-top: 4px; }
+  @media (prefers-reduced-motion: reduce) { .prophecy { animation: none; } }
+</style>
+</head>
+<body>
+
+<div class="temple">
+  <div class="band" aria-hidden="true"></div>
+  <main>
+    <p class="eyebrow">Oráculo da 9mm</p>
+    <h1>Sua profecia</h1>
+    <svg class="laurel" viewBox="0 0 120 40" aria-hidden="true">
+      <g fill="currentColor">
+        <path d="M60 36c-14-2-30-10-40-24 10 4 26 12 40 24z" opacity="0"/>
+        <ellipse cx="22" cy="12" rx="9" ry="3.6" transform="rotate(30 22 12)"/>
+        <ellipse cx="32" cy="20" rx="9" ry="3.6" transform="rotate(22 32 20)"/>
+        <ellipse cx="43" cy="27" rx="9" ry="3.6" transform="rotate(14 43 27)"/>
+        <ellipse cx="98" cy="12" rx="9" ry="3.6" transform="rotate(-30 98 12)"/>
+        <ellipse cx="88" cy="20" rx="9" ry="3.6" transform="rotate(-22 88 20)"/>
+        <ellipse cx="77" cy="27" rx="9" ry="3.6" transform="rotate(-14 77 27)"/>
+        <circle cx="60" cy="31" r="3.4"/>
+      </g>
+      <path d="M14 6C24 24 42 32 56 32M106 6C96 24 78 32 64 32" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <div class="tablet">
+      <p class="prophecy" id="prophecy" aria-live="polite">Os astros revelam: seu próximo job será aprovado de primeira. Os deuses, porém, não garantem o cliente.</p>
+    </div>
+    <button class="again" id="again" type="button">Consultar o Oráculo de novo</button>
+    <p class="sign">OLIMPO 9MM<em>Ideias divinas. Prazos mortais.</em></p>
+  </main>
+  <div class="band bottom" aria-hidden="true"></div>
+</div>
+
+<script>
+  const prophecies = [
+    "Os astros revelam: seu próximo job será aprovado de primeira. Os deuses, porém, não garantem o cliente.",
+    "Zeus viu o seu 2027: menos refação, mais aprovação. O raio só cai no concorrente.",
+    "Hermes trará um briefing claro como o céu do Olimpo. Aproveite, isso acontece uma vez por milênio.",
+    "Atena sopra no seu ouvido: a melhor ideia de 2027 vai surgir no banho. Tenha um bloco à prova d'água.",
+    "Hera prevê que aquele \"só um ajuste\" será mesmo só um ajuste. Acredite. Ou não.",
+    "O Oráculo enxerga um prazo generoso no seu horizonte. Desconfie, pode ser miragem.",
+    "Dionísio decretou: seu próximo ano terá mais brindes do que reuniões.",
+    "Apolo ilumina seu caminho: o próximo conceito será lindo. A copy também. E a trilha, idem.",
+    "Prometeu jura que em 2027 você vai entregar antes do prazo. Pelo menos uma vez.",
+    "As Moiras já teceram seu destino: um job épico, uma campanha premiada e um final_v1 que será, de fato, o final."
+  ];
+  const el = document.getElementById("prophecy");
+  let current = -1;
+  function reveal() {
+    let next;
+    do { next = Math.floor(Math.random() * prophecies.length); } while (next === current && prophecies.length > 1);
+    current = next;
+    el.textContent = prophecies[next];
+    el.style.animation = "none";
+    void el.offsetWidth;
+    el.style.animation = "";
+  }
+  reveal();
+  document.getElementById("again").addEventListener("click", reveal);
+</script>
+
+</body>
+</html>
